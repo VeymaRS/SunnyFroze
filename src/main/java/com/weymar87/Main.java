@@ -1,5 +1,9 @@
 package com.weymar87;
 
+import com.weymar87.climate.Climate;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Main {
 
     //    public static void writeJson(String json) {
@@ -10,6 +14,9 @@ public class Main {
 //            e.printStackTrace();
 //        }
 //    }
+
+    private ObservableList<Climate> climateData = FXCollections.observableArrayList();
+
     public static void start() {
 
 //        Climate com.weymar87.climate = new Climate(-16.0, -15.0, -5.0, 0.0, 5.0, 10.0, 17.0,
@@ -57,5 +64,8 @@ public class Main {
 
 
 //        neyavnaya_2D.saveToCSV("result.csv", com.weymar87.mash);
+    }
+    public ObservableList<Climate> getClimateData() {
+        return climateData;
     }
 }

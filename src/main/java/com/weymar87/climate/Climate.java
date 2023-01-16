@@ -29,12 +29,18 @@ public class Climate {
 //    }
 
 
+
     public Climate(int year) {
         this.arrClimate = new SimpleDoubleProperty[12][5];
         int m = 0;
         for (int i = 0; i < arrClimate.length; i++) {
             arrClimate[i][0].set(m);
             m += 1;
+        }
+        for (int i = 0; i < arrClimate.length; i++) {
+            for (int j = 1; j < arrClimate[i].length; j++) {
+                arrClimate[i][j].set(0);
+            }
         }
     }
 
