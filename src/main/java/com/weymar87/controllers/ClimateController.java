@@ -57,8 +57,8 @@ public class ClimateController {
         december.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
     }
 
-    public void setMainApp(Main mainApp) {
-        this.mainApp = mainApp;
-        climate.setItems(mainApp.getClimateObservableList());
-    }
+//    public void setMainApp(Main mainApp) {
+//        this.mainApp = mainApp;
+//        climate.setItems(mainApp.getClimateObservableList());
+//    }
 }
