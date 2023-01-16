@@ -12,8 +12,8 @@ public class PrimaryController {
 
 //    private Main mainApp;
 //
-//    @FXML
-//    private TableView<Climate> climate;
+    @FXML
+    private TableView<Climate> climate;
     @FXML
     private TableColumn<Climate, String> january;
     @FXML
@@ -36,26 +36,26 @@ public class PrimaryController {
     private TableColumn<Climate, String> october;
     @FXML
     private TableColumn<Climate, String> november;
-//    @FXML
-//    private TableColumn<Climate, String> december;
-//
-//    public PrimaryController() {
-//    }
-//    @FXML
-//    private void initialize() {
-//        january.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        february.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        march.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        april.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        may.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        june.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        july.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        august.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        september.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        october.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        november.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//        december.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
-//    }
+    @FXML
+    private TableColumn<Climate, String> december;
+
+    public PrimaryController() {
+    }
+    @FXML
+    private void initialize() {
+        january.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        february.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        march.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        april.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        may.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        june.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        july.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        august.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        september.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        october.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        november.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+        december.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
+    }
 
     //    public void setMainApp(Main mainApp) {
 //        this.mainApp = mainApp;

@@ -50,7 +50,7 @@
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
                                                 <Label layoutX="80.0" layoutY="5.0" prefHeight="18.0" text="Среднемесячная температура воздуха" />
-                                                <TableView layoutY="23.0" prefHeight="50.0" prefWidth="375.0">
+                                                <TableView fx:id="climate" layoutY="23.0" prefHeight="50.0" prefWidth="375.0">
                                                   <columns>
                                                     <TableColumn fx:id="january" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="1" />
                                                     <TableColumn fx:id="february" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="2" />
