@@ -56,6 +56,11 @@ public class PrimaryController {
 //        november.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
 //        december.setCellFactory(TextFieldTableCell.<Climate>forTableColumn());
 //    }
+
+    //    public void setMainApp(Main mainApp) {
+//        this.mainApp = mainApp;
+//        climate.setItems(mainApp.getClimateObservableList());
+//    }
     @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");

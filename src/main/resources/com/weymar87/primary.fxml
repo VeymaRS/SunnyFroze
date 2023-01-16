@@ -52,18 +52,18 @@
                                                 <Label layoutX="80.0" layoutY="5.0" prefHeight="18.0" text="Среднемесячная температура воздуха" />
                                                 <TableView layoutY="23.0" prefHeight="50.0" prefWidth="375.0">
                                                   <columns>
-                                                    <TableColumn fx:id="january" prefWidth="30.0" resizable="false" text="1" />
-                                                    <TableColumn fx:id="february" prefWidth="30.0" resizable="false" text="2" />
-                                                      <TableColumn fx:id="march" prefWidth="30.0" resizable="false" text="3" />
-                                                      <TableColumn fx:id="april" prefWidth="30.0" resizable="false" text="4" />
-                                                      <TableColumn fx:id="may" prefWidth="30.0" resizable="false" text="5" />
-                                                      <TableColumn fx:id="june" prefWidth="30.0" resizable="false" text="6" />
-                                                      <TableColumn fx:id="july" prefWidth="30.0" resizable="false" text="7" />
-                                                      <TableColumn fx:id="august" prefWidth="30.0" resizable="false" text="8" />
-                                                      <TableColumn fx:id="september" prefWidth="30.0" resizable="false" text="9" />
-                                                      <TableColumn fx:id="october" prefWidth="30.0" resizable="false" text="10" />
-                                                      <TableColumn fx:id="november" prefWidth="30.0" resizable="false" text="11" />
-                                                      <TableColumn fx:id="december" prefWidth="30.0" resizable="false" text="12" />
+                                                    <TableColumn fx:id="january" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="1" />
+                                                    <TableColumn fx:id="february" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="2" />
+                                                      <TableColumn fx:id="march" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="3" />
+                                                      <TableColumn fx:id="april" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="4" />
+                                                      <TableColumn fx:id="may" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="5" />
+                                                      <TableColumn fx:id="june" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="6" />
+                                                      <TableColumn fx:id="july" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="7" />
+                                                      <TableColumn fx:id="august" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="8" />
+                                                      <TableColumn fx:id="september" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="9" />
+                                                      <TableColumn fx:id="october" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="10" />
+                                                      <TableColumn fx:id="november" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="11" />
+                                                      <TableColumn fx:id="december" editable="false" prefWidth="30.0" resizable="false" sortable="false" text="12" />
                                                   </columns>
                                                 </TableView>
                                              </children>
