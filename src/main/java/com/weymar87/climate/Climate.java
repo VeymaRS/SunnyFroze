@@ -13,7 +13,12 @@ public class Climate {
     private double lamdaSnow;
     private Calendar startDate;
 
-//    public double interpolation(Double[] arr, double a) {
+    private SimpleDoubleProperty january;
+
+    public SimpleDoubleProperty januaryProperty() {
+        return january;
+    }
+    //    public double interpolation(Double[] arr, double a) {
 //        double result = 0;
 //            for (int i = 0; i < arr.length; i++) {
 //                if (a >= arr[i]) {
@@ -47,6 +52,7 @@ public class Climate {
     public void addTemp(Double januaryTemp, double februaryTemp, double marchTemp, double aprilTemp, double mayTemp,
                         double juneTemp, double julyTemp, double augustTemp, double septemberTemp, double octoberTemp,
                         double novemberTemp, double decemberTemp) {
+
         arrClimate[0][1] = new SimpleDoubleProperty(januaryTemp);
         arrClimate[1][1] = new SimpleDoubleProperty(februaryTemp);
         arrClimate[2][1] = new SimpleDoubleProperty(marchTemp);

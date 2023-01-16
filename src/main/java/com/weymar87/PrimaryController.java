@@ -7,12 +7,10 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.TextFieldTableCell;
 
 public class PrimaryController {
 
-//    private Main mainApp;
-//
+    private Main mainApp;
     @FXML
     private TableView<Climate> climate;
     @FXML
@@ -44,13 +42,12 @@ public class PrimaryController {
     }
     @FXML
     private void initialize() {
-
-january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1]);
+january.setCellValueFactory(cellData -> cellData.getValue().januaryProperty());
     }
 
         public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
-        climate.setItems(mainApp.getClimateObservableList());
+        climate.setItems(mainApp.getClimateData());
     }
 
     @FXML

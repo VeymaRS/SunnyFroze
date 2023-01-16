@@ -4,6 +4,8 @@ import com.weymar87.climate.Climate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.GregorianCalendar;
+
 public class Main {
 
     //    public static void writeJson(String json) {
@@ -17,13 +19,13 @@ public class Main {
 
     private ObservableList<Climate> climateData = FXCollections.observableArrayList();
 
-    public static void start() {
+    public void start() {
 
-//        Climate com.weymar87.climate = new Climate(-16.0, -15.0, -5.0, 0.0, 5.0, 10.0, 17.0,
-//                15.0, 10.0, -2.0, -5.0, -15.0);
-//
-//
-//
+        climateData.add(new Climate(2022));
+
+        climateData.get(0).setStartDate(new GregorianCalendar(2021, 5, 15));
+        climateData.get(0).setLamdaSnow(0.2);
+        climateData.get(0).calcAlphaWithSnow();
 //        Gson gson = new Gson();
 //        gson = new GsonBuilder()
 //                .registerTypeAdapter(Soil.class, new SoilSerializer())
