@@ -30,7 +30,7 @@ public class Climate {
 
 
 
-    public Climate(int year) {
+    public Climate() {
         this.arrClimate = new SimpleDoubleProperty[12][5];
         int m = 0;
         for (int i = 0; i < arrClimate.length; i++) {

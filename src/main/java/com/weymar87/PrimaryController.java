@@ -7,6 +7,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PrimaryController {
 
@@ -40,36 +41,36 @@ public class PrimaryController {
 
     public PrimaryController() {
     }
+
     @FXML
     private void initialize() {
-january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1]);
-//        january.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        february.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        march.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        april.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        may.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        june.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        july.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        august.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        september.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        october.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        november.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
-//        december.setCellValueFactory(new PropertyValueFactory<Climate, Double>("0"));
+        this.mainApp = new Main();
+        climate.setItems(mainApp.getClimateData());
 
-//                cellData -> cellData.getValue().getArrClimate()[0][1]
+        january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1].asObject());
+        february.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[1][1].asObject());
+        march.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[2][1].asObject());
+        april.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[3][1].asObject());
+        may.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[4][1].asObject());
+        june.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[5][1].asObject());
+        july.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[6][1].asObject());
+        august.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[7][1].asObject());
+        september.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[8][1].asObject());
+        october.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[9][1].asObject());
+        november.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[10][1].asObject());
+        december.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[11][1].asObject());
     }
 
 
     @FXML
-    public void buttonExit(Event e){
+    public void buttonExit(Event e) {
 
     }
 
-    public void setClimate(Main mainApp) {
-        this.mainApp = mainApp;
-        climate.setItems(mainApp.getClimateData());
-    }
-
+//    public void setClimate(Main mainApp) {
+//        this.mainApp = mainApp;
+//        climate.setItems(mainApp.getClimateData());
+//    }
 
 
     @FXML

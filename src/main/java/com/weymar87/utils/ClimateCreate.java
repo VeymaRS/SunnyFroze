@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 public class ClimateCreate {
 
     public static Climate climateCreate() {
-        Climate climate = new Climate(2022);
+        Climate climate = new Climate();
 
         climate.addTemp(
                 -21.6,

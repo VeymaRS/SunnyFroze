@@ -20,7 +20,7 @@ public class Main {
     private ObservableList<Climate> climateData = FXCollections.observableArrayList();
 
     public Main() {
-        climateData.add(new Climate(2022));
+        climateData.add(new Climate());
         climateData.get(0).setStartDate(new GregorianCalendar(2021, 5, 15));
         climateData.get(0).setLamdaSnow(0.2);
         climateData.get(0).calcAlphaWithSnow();
