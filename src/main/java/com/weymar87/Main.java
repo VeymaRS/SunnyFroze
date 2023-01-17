@@ -19,10 +19,8 @@ public class Main {
 
     private ObservableList<Climate> climateData = FXCollections.observableArrayList();
 
-    public void start() {
-
+    public Main() {
         climateData.add(new Climate(2022));
-
         climateData.get(0).setStartDate(new GregorianCalendar(2021, 5, 15));
         climateData.get(0).setLamdaSnow(0.2);
         climateData.get(0).calcAlphaWithSnow();
@@ -67,6 +65,7 @@ public class Main {
 
 //        neyavnaya_2D.saveToCSV("result.csv", com.weymar87.mash);
     }
+
     public ObservableList<Climate> getClimateData() {
         return climateData;
     }
