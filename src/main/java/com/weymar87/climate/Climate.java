@@ -1,6 +1,5 @@
 package com.weymar87.climate;
 
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
 import java.util.Calendar;
@@ -106,6 +105,10 @@ public class Climate {
 
     public void setLamdaSnow(double lamdaSnow) {
         this.lamdaSnow = lamdaSnow;
+    }
+    public void setNewValue(int month, int typeOfValue, Double value) {
+        SimpleDoubleProperty v = new SimpleDoubleProperty(value);
+        arrClimate[month][typeOfValue] = v;
     }
 
     public Calendar getStartDate() {
