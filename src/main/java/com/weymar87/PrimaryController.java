@@ -64,6 +64,9 @@ public class PrimaryController {
         october.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[9][1].asObject());
         november.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[10][1].asObject());
         december.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[11][1].asObject());
+        january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][2].asObject());
+        january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][2].asObject());
+
 
         january.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         january.setOnEditCommit(
