@@ -38,7 +38,7 @@ public class Climate {
         }
         for (int i = 0; i < arrClimate.length; i++) {
             for (int j = 1; j < arrClimate[i].length; j++) {
-                arrClimate[i][j] = new SimpleDoubleProperty(0);
+                arrClimate[i][j] = new SimpleDoubleProperty(1);
             }
         }
     }
@@ -143,12 +143,12 @@ public class Climate {
         int t = (int) time;
         Calendar calendarCurrent = startDate;
         calendarCurrent.add(Calendar.SECOND, t);
-        int сurrentMonth = calendarCurrent.get(Calendar.MONTH);
+        int currentMonth = calendarCurrent.get(Calendar.MONTH);
         int currentDayInMonth = calendarCurrent.get(Calendar.DAY_OF_MONTH);
         double trend = tempTrend * (calendarCurrent.get(Calendar.YEAR) - startDate.get(Calendar.YEAR));
 
         for (int i = 0; i < arrClimate.length; i++) {
-            if (сurrentMonth == arrClimate[i][0].get()) {
+            if (currentMonth == arrClimate[i][0].get()) {
                 if (currentDayInMonth > 15) {
                     if (i == 11) {
                         val1 = new GregorianCalendar(calendarCurrent.get(Calendar.YEAR),
