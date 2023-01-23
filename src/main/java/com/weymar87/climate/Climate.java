@@ -30,16 +30,12 @@ public class Climate {
 
 
     public Climate() {
-        this.arrClimate = new SimpleDoubleProperty[12][5];
+        this.arrClimate = new SimpleDoubleProperty[12][2];
         int m = 0;
         for (int i = 0; i < arrClimate.length; i++) {
             arrClimate[i][0] = new SimpleDoubleProperty(m);
+            arrClimate[i][1] = new SimpleDoubleProperty(0);
             m += 1;
-        }
-        for (int i = 0; i < arrClimate.length; i++) {
-            for (int j = 1; j < arrClimate[i].length; j++) {
-                arrClimate[i][j] = new SimpleDoubleProperty(1);
-            }
         }
     }
 
@@ -59,40 +55,6 @@ public class Climate {
         arrClimate[9][1] = new SimpleDoubleProperty(octoberTemp);
         arrClimate[10][1] = new SimpleDoubleProperty(novemberTemp);
         arrClimate[11][1] = new SimpleDoubleProperty(decemberTemp);
-    }
-
-    public void addWind(Double januaryWind, Double februaryWind, Double marchWind, Double aprilWind, Double mayWind,
-                        Double juneWind, Double julyWind, Double augustWind, Double septemberWind, Double octoberWind,
-                        Double novemberWind, Double decemberWind) {
-        arrClimate[0][2] = new SimpleDoubleProperty(januaryWind);
-        arrClimate[1][2] = new SimpleDoubleProperty(februaryWind);
-        arrClimate[2][2] = new SimpleDoubleProperty(marchWind);
-        arrClimate[3][2] = new SimpleDoubleProperty(aprilWind);
-        arrClimate[4][2] = new SimpleDoubleProperty(mayWind);
-        arrClimate[5][2] = new SimpleDoubleProperty(juneWind);
-        arrClimate[6][2] = new SimpleDoubleProperty(julyWind);
-        arrClimate[7][2] = new SimpleDoubleProperty(augustWind);
-        arrClimate[8][2] = new SimpleDoubleProperty(septemberWind);
-        arrClimate[9][2] = new SimpleDoubleProperty(octoberWind);
-        arrClimate[10][2] = new SimpleDoubleProperty(novemberWind);
-        arrClimate[11][2] = new SimpleDoubleProperty(decemberWind);
-    }
-
-    public void addSnow(double januarySnow, double februarySnow, double marchSnow, double aprilSnow, double maySnow,
-                        double juneSnow, double julySnow, double augustSnow, double septemberSnow, double octoberSnow,
-                        double novemberSnow, double decemberSnow) {
-        arrClimate[0][3] = new SimpleDoubleProperty(januarySnow);
-        arrClimate[1][3] = new SimpleDoubleProperty(februarySnow);
-        arrClimate[2][3] = new SimpleDoubleProperty(marchSnow);
-        arrClimate[3][3] = new SimpleDoubleProperty(aprilSnow);
-        arrClimate[4][3] = new SimpleDoubleProperty(maySnow);
-        arrClimate[5][3] = new SimpleDoubleProperty(juneSnow);
-        arrClimate[6][3] = new SimpleDoubleProperty(julySnow);
-        arrClimate[7][3] = new SimpleDoubleProperty(augustSnow);
-        arrClimate[8][3] = new SimpleDoubleProperty(septemberSnow);
-        arrClimate[9][3] = new SimpleDoubleProperty(octoberSnow);
-        arrClimate[10][3] = new SimpleDoubleProperty(novemberSnow);
-        arrClimate[11][3] = new SimpleDoubleProperty(decemberSnow);
     }
 
     public SimpleDoubleProperty[][] getArrClimate() {
