@@ -1,16 +1,19 @@
 package com.weymar87;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import com.weymar87.climate.Climate;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.DataFormat;
 import javafx.util.StringConverter;
 import javafx.util.converter.DoubleStringConverter;
 
@@ -44,6 +47,9 @@ public class PrimaryController {
     @FXML
     private TableColumn<Climate, Double> december;
 
+    @FXML
+    private DatePicker startdate;
+
     public PrimaryController() {
     }
 
@@ -51,6 +57,7 @@ public class PrimaryController {
     private void initialize() {
         this.mainApp = new Main();
         climate.setItems(mainApp.getClimateData());
+
 
         january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1].asObject());
         february.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[1][1].asObject());

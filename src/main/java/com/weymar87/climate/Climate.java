@@ -93,7 +93,7 @@ public class Climate {
         }
     }
 
-    public Double interpolationForClimate(double time, double tempTrend, int typeValue) {
+    public Double interpolationForClimate(double time, double tempTrend) {
         Double result = 0.0;
         Map<Calendar, Double[]> valueLeft;
         Calendar val1;
@@ -119,8 +119,8 @@ public class Climate {
                                 calendarCurrent.get(Calendar.MONTH) + 1, 15);
                         x1 = val1.getTimeInMillis();
                         x2 = val2.getTimeInMillis();
-                        y1 = arrClimate[i][typeValue].get() + trend;
-                        y2 = arrClimate[0][typeValue].get() + trend;
+                        y1 = arrClimate[i][1].get() + trend;
+                        y2 = arrClimate[0][1].get() + trend;
                     } else {
                         val1 = new GregorianCalendar(calendarCurrent.get(Calendar.YEAR),
                                 calendarCurrent.get(Calendar.MONTH), 15);
@@ -128,8 +128,8 @@ public class Climate {
                                 calendarCurrent.get(Calendar.MONTH) + 1, 15);
                         x1 = val1.getTimeInMillis();
                         x2 = val2.getTimeInMillis();
-                        y1 = arrClimate[i][typeValue].get() + trend;
-                        y2 = arrClimate[i + 1][typeValue].get() + trend;
+                        y1 = arrClimate[i][1].get() + trend;
+                        y2 = arrClimate[i + 1][1].get() + trend;
                     }
                 } else if (currentDayInMonth <= 15) {
                     if (i == 0) {
@@ -139,8 +139,8 @@ public class Climate {
                                 calendarCurrent.get(Calendar.MONTH), 15);
                         x1 = val1.getTimeInMillis();
                         x2 = val2.getTimeInMillis();
-                        y1 = arrClimate[11][typeValue].get() + trend;
-                        y2 = arrClimate[i][typeValue].get() + trend;
+                        y1 = arrClimate[11][1].get() + trend;
+                        y2 = arrClimate[i][1].get() + trend;
                     } else {
                         val1 = new GregorianCalendar(calendarCurrent.get(Calendar.YEAR),
                                 calendarCurrent.get(Calendar.MONTH) - 1, 15);
@@ -148,8 +148,8 @@ public class Climate {
                                 calendarCurrent.get(Calendar.MONTH), 15);
                         x1 = val1.getTimeInMillis();
                         x2 = val2.getTimeInMillis();
-                        y1 = arrClimate[i - 1][typeValue].get() + trend;
-                        y2 = arrClimate[i][typeValue].get() + trend;
+                        y1 = arrClimate[i - 1][1].get() + trend;
+                        y2 = arrClimate[i][1].get() + trend;
                     }
                 }
             }

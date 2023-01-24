@@ -1,9 +1,11 @@
 package com.weymar87.solver;
 
+import com.weymar87.Main;
 import com.weymar87.climate.Climate;
 //import com.opencsv.CSVWriter;
 import com.weymar87.mash.Mash;
 import com.weymar87.soil.Soil;
+import javafx.collections.ObservableList;
 
 
 import java.io.FileWriter;
@@ -56,7 +58,7 @@ public class Neyavnaya_2D {
     double end;
     Integer c = 1;
 
-    public void calculate_neyavnaya_2D(double endtimeT, Mash mash, Climate climate, int printIterStep) {//, Climate com.weymar87.climate) {
+    public void calculate_neyavnaya_2D(double endtimeT, Mash mash, Main main, int printIterStep) {//, Climate com.weymar87.climate) {
         end = endtimeT;
         CalculateLinearInt cal = new CalculateLinearInt();
         arrTmemory = new HashMap<>();
@@ -99,8 +101,8 @@ public class Neyavnaya_2D {
         while (time < endtimeT) {
 
             time += tau;
-            Te = climate.interpolationForClimate(time, 0.04, 1);
-            kappa = climate.interpolationForClimate(time,0.04, 4);
+            Te = main.getClimateData().get(0).interpolationForClimate(time, 0.04);
+            kappa = main.getClimateData().get(4).interpolationForClimate(time,0.04);
 
             for (int i = 0; i < mash.getNx(); i++) {
                 for (int j = 0; j < mash.getNy(); j++)

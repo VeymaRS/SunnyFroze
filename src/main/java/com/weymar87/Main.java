@@ -25,7 +25,7 @@ public class Main {
         climateData.add(new Climate());
         climateData.get(0).setStartDate(new GregorianCalendar(2021, 5, 15));
         climateData.get(0).setLamdaSnow(0.2);
-        climateData.get(0).calcAlphaWithSnow();
+//        climateData.get(0).calcAlphaWithSnow();
 //        Gson gson = new Gson();
 //        gson = new GsonBuilder()
 //                .registerTypeAdapter(Soil.class, new SoilSerializer())
