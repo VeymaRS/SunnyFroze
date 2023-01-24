@@ -68,9 +68,9 @@ public class Climate {
     public void setLamdaSnow(double lamdaSnow) {
         this.lamdaSnow = lamdaSnow;
     }
-    public void setNewValue(int month, int typeOfValue, Double value) {
+    public void setNewValue(int month, Double value) {
         SimpleDoubleProperty v = new SimpleDoubleProperty(value);
-        arrClimate[month][typeOfValue] = v;
+        arrClimate[month][1] = v;
     }
 
     public Calendar getStartDate() {

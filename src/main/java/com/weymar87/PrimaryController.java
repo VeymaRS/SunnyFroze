@@ -1,25 +1,20 @@
 package com.weymar87;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 import com.weymar87.climate.Climate;
-import javafx.beans.property.SimpleDoubleProperty;
+import com.weymar87.utils.ClimateBaseCreate;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.input.DataFormat;
-import javafx.util.StringConverter;
 import javafx.util.converter.DoubleStringConverter;
 
 public class PrimaryController {
 
-    private Main mainApp;
+    private ClimateBaseCreate climateBaseCreate;
     @FXML
     private TableView<Climate> climate;
     @FXML
@@ -48,15 +43,25 @@ public class PrimaryController {
     private TableColumn<Climate, Double> december;
 
     @FXML
+    private TextField field;
+
+    @FXML
     private DatePicker startdate;
+
+    @FXML
+    private DatePicker startdate1;
+
+    @FXML
+    private Button btn;
 
     public PrimaryController() {
     }
 
+
     @FXML
     private void initialize() {
-        this.mainApp = new Main();
-        climate.setItems(mainApp.getClimateData());
+        this.climateBaseCreate = new ClimateBaseCreate();
+        climate.setItems(climateBaseCreate.getClimateData());
 
 
         january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1].asObject());
@@ -77,35 +82,35 @@ public class PrimaryController {
         january.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(0,1, t.getNewValue())
+                ).setNewValue(0, t.getNewValue())
         );
 
         february.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         february.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(1,1, t.getNewValue())
+                ).setNewValue(1, t.getNewValue())
         );
 
         march.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         march.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(2,1, t.getNewValue())
+                ).setNewValue(2, t.getNewValue())
         );
 
         april.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         april.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(3,1, t.getNewValue())
+                ).setNewValue(3, t.getNewValue())
         );
 
         may.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         may.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(4,1, t.getNewValue())
+                ).setNewValue(4, t.getNewValue())
         );
 
 
@@ -113,19 +118,19 @@ public class PrimaryController {
         june.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(5,1, t.getNewValue())
+                ).setNewValue(5, t.getNewValue())
         );
         july.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         july.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(6,1, t.getNewValue())
+                ).setNewValue(6,t.getNewValue())
         );
         august.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         august.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(7,1, t.getNewValue())
+                ).setNewValue(7, t.getNewValue())
         );
         september.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
 
@@ -142,9 +147,31 @@ public class PrimaryController {
 
     }
 
-//    public void setClimate(Main mainApp) {
-//        this.mainApp = mainApp;
-//        climate.setItems(mainApp.getClimateData());
+    @FXML
+    public void setData(ActionEvent event) {
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                startdate1.setValue(startdate.getValue());
+                field.setText(String.valueOf(january.getTableView().getItems().get(1).getArrClimate()[0][0]));
+            }
+        });
+    }
+
+    @FXML
+    public void setValue(ActionEvent event) {
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                startdate1.setValue(startdate.getValue());
+
+            }
+        });
+    }
+
+//    public void setClimate(Main climateBaseCreate) {
+//        this.climateBaseCreate = climateBaseCreate;
+//        climate.setItems(climateBaseCreate.getClimateData());
 //    }
 
 

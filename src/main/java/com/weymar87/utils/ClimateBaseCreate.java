@@ -1,4 +1,4 @@
-package com.weymar87;
+package com.weymar87.utils;
 
 import com.weymar87.climate.Climate;
 import javafx.collections.FXCollections;
@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 
 import java.util.GregorianCalendar;
 
-public class Main {
+public class ClimateBaseCreate {
 
     //    public static void writeJson(String json) {
 //        try (FileWriter file = new FileWriter("SoilBase.json")) {
@@ -19,7 +19,7 @@ public class Main {
 
     private ObservableList<Climate> climateData = FXCollections.observableArrayList();
 
-    public Main() {
+    public ClimateBaseCreate() {
         climateData.add(new Climate());
         climateData.add(new Climate());
         climateData.add(new Climate());

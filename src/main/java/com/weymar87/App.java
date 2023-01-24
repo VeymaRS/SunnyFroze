@@ -1,18 +1,23 @@
 package com.weymar87;
 
+import com.weymar87.climate.Climate;
 import javafx.application.Application;
-import javafx.beans.property.SimpleDoubleProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.GregorianCalendar;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
+
+
     private static Scene scene;
 
     @Override
