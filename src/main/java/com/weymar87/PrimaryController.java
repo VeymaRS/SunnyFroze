@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.weymar87.climate.Climate;
 import com.weymar87.utils.ClimateBaseCreate;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -124,7 +125,7 @@ public class PrimaryController {
         july.setOnEditCommit(
                 t -> ((Climate) t.getTableView().getItems().get(
                         t.getTablePosition().getRow())
-                ).setNewValue(6,t.getNewValue())
+                ).setNewValue(6, t.getNewValue())
         );
         august.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         august.setOnEditCommit(
@@ -153,7 +154,10 @@ public class PrimaryController {
             @Override
             public void handle(ActionEvent actionEvent) {
                 startdate1.setValue(startdate.getValue());
-                field.setText(String.valueOf(january.getTableView().getItems().get(1).getArrClimate()[0][0]));
+                field.setText(
+                        String.valueOf(
+                                january.getTableView().getItems().get(0).getArrClimate()[5][1].getValue()).toString());
+                field.setEditable(false);
             }
         });
     }
@@ -179,4 +183,5 @@ public class PrimaryController {
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");
     }
+
 }

@@ -34,12 +34,12 @@ public class Climate {
         int m = 0;
         for (int i = 0; i < arrClimate.length; i++) {
             arrClimate[i][0] = new SimpleDoubleProperty(m);
-            arrClimate[i][1] = new SimpleDoubleProperty(0);
+            arrClimate[i][1] = new SimpleDoubleProperty(m+1);
             m += 1;
         }
     }
 
-    public void addTemp(Double januaryTemp, double februaryTemp, double marchTemp, double aprilTemp, double mayTemp,
+    public void addTemp(double januaryTemp, double februaryTemp, double marchTemp, double aprilTemp, double mayTemp,
                         double juneTemp, double julyTemp, double augustTemp, double septemberTemp, double octoberTemp,
                         double novemberTemp, double decemberTemp) {
 
