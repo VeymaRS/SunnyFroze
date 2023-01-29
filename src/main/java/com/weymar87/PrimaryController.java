@@ -63,6 +63,7 @@ public class PrimaryController {
     private void initialize() {
         this.climateBaseCreate = new ClimateBaseCreate();
         climate.setItems(climateBaseCreate.getClimateData());
+        climate.setFixedCellSize(35);
 
 
         january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1].asObject());
@@ -134,12 +135,34 @@ public class PrimaryController {
                 ).setNewValue(7, t.getNewValue())
         );
         september.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        september.setOnEditCommit(
+                t -> ((Climate) t.getTableView().getItems().get(
+                        t.getTablePosition().getRow())
+                ).setNewValue(8, t.getNewValue())
+        );
+
 
         october.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        october.setOnEditCommit(
+                t -> ((Climate) t.getTableView().getItems().get(
+                        t.getTablePosition().getRow())
+                ).setNewValue(9, t.getNewValue())
+        );
+
 
         november.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        november.setOnEditCommit(
+                t -> ((Climate) t.getTableView().getItems().get(
+                        t.getTablePosition().getRow())
+                ).setNewValue(10, t.getNewValue())
+        );
 
         december.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        december.setOnEditCommit(
+                t -> ((Climate) t.getTableView().getItems().get(
+                        t.getTablePosition().getRow())
+                ).setNewValue(10, t.getNewValue())
+        );
     }
 
 
