@@ -1,11 +1,15 @@
 package com.weymar87.soil;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class SoilBase {
-    public List<Soil> getSoilList() {
-        return new ArrayList<>(soilList);
+    ObservableList<Soil> soilList = FXCollections.observableArrayList();
+    public ObservableList<Soil> getSoilList() {
+        return FXCollections.observableArrayList();
     }
 
     public void addSoil(Soil soil) {this.soilList.add(soil);}
@@ -14,7 +18,7 @@ public class SoilBase {
         Soil soil = soilList.get(index);
         return soil;
     }
-    List<Soil> soilList = new ArrayList<>();
+
 
 
 }

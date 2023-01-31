@@ -3,8 +3,9 @@ package com.weymar87;
 import java.io.IOException;
 
 import com.weymar87.climate.Climate;
+import com.weymar87.soil.Soil;
+import com.weymar87.soil.SoilBase;
 import com.weymar87.utils.ClimateBaseCreate;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -16,8 +17,13 @@ import javafx.util.converter.DoubleStringConverter;
 public class PrimaryController {
 
     private ClimateBaseCreate climateBaseCreate;
+    private SoilBase soilBase;
     @FXML
     private TableView<Climate> climate;
+
+    @FXML
+    private TableView<Soil> soils;
+
     @FXML
     private TableColumn<Climate, Double> january;
     @FXML
@@ -44,6 +50,8 @@ public class PrimaryController {
     private TableColumn<Climate, Double> december;
 
     @FXML
+    private TableColumn<Climate, Double> soilName;
+    @FXML
     private TextField field;
 
     @FXML
@@ -55,6 +63,9 @@ public class PrimaryController {
     @FXML
     private Button btn;
 
+    @FXML
+    private Button addSoilBtn;
+
     public PrimaryController() {
     }
 
@@ -62,9 +73,9 @@ public class PrimaryController {
     @FXML
     private void initialize() {
         this.climateBaseCreate = new ClimateBaseCreate();
+        this.soilBase = new SoilBase();
         climate.setItems(climateBaseCreate.getClimateData());
         climate.setFixedCellSize(35);
-
 
         january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1].asObject());
         february.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[1][1].asObject());
@@ -192,6 +203,19 @@ public class PrimaryController {
             public void handle(ActionEvent actionEvent) {
                 startdate1.setValue(startdate.getValue());
 
+            }
+        });
+    }
+
+    @FXML
+    public void addSoilAction(ActionEvent actionEvent) {
+        addSoilBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                soilBase.addSoil(new Soil("IGE1", "SAND", 0.00, 0.0, 0, 0.0,
+                        0.0, 0.0, 0.0, 0,
+                        0.0E6, 0.0E6, 0.0, 0.0, 0.0, 0));
+                soils.setItems(soilBase.getSoilList());
             }
         });
     }
