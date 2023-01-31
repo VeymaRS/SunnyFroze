@@ -107,11 +107,11 @@
                                              <children>
                                                 <TableView fx:id="soils" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="575.0">
                                                   <columns>
-                                                    <TableColumn prefWidth="60.0" resizable="false" sortable="false" text="Имя ИГЭ" />
-                                                    <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Тип ИГЭ" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Wtot" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Wp" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Tbf" />
+                                                    <TableColumn fx:id="soilName" prefWidth="60.0" resizable="false" sortable="false" text="Имя ИГЭ" />
+                                                    <TableColumn fx:id="typeSoil" prefWidth="50.0" resizable="false" sortable="false" text="Тип ИГЭ" />
+                                                      <TableColumn fx:id="Wtot" prefWidth="50.0" resizable="false" sortable="false" text="Wtot" />
+                                                      <TableColumn fx:id="Wp" prefWidth="50.0" resizable="false" sortable="false" text="Wp" />
+                                                      <TableColumn fx:id="Tbf" prefWidth="50.0" resizable="false" sortable="false" text="Tbf" />
                                                       <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="λth" />
                                                       <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="λf" />
                                                       <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Cth" />
