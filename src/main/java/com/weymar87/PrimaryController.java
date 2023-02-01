@@ -132,87 +132,96 @@ public class PrimaryController {
 
         january.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         january.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(0, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(0, t.getNewValue())
         );
 
         february.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         february.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(1, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(1, t.getNewValue())
         );
 
         march.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         march.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(2, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(2, t.getNewValue())
         );
 
         april.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         april.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(3, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(3, t.getNewValue())
         );
 
         may.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         may.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(4, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(4, t.getNewValue())
         );
 
 
         june.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         june.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(5, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(5, t.getNewValue())
         );
         july.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         july.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(6, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(6, t.getNewValue())
         );
         august.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         august.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(7, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(7, t.getNewValue())
         );
         september.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         september.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(8, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(8, t.getNewValue())
         );
 
 
         october.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         october.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(9, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(9, t.getNewValue())
         );
 
 
         november.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         november.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(10, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(10, t.getNewValue())
         );
 
         december.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
         december.setOnEditCommit(
-                t -> ((Climate) t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setNewValue(10, t.getNewValue())
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNewValue(10, t.getNewValue())
         );
+
+        soilName.setCellFactory(TextFieldTableCell.forTableColumn());
+        soilName.setOnEditCommit(
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNameSoil(t.getNewValue())
+        );
+        typeSoil.setCellFactory(TextFieldTableCell.forTableColumn());
+        typeSoil.setOnEditCommit(
+                t -> t.getTableView().getItems().get(
+                        t.getTablePosition().getRow()).setNameSoil(t.getNewValue())
+        );
+        Wtot.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        Wp.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        Tbf.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        lambda_th.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        lambda_f.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        cth.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        cf.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        Dsal.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+        soilWidth.setCellFactory(TextFieldTableCell.forTableColumn((new DoubleStringConverter())));
+
     }
 
 
@@ -223,36 +232,23 @@ public class PrimaryController {
 
     @FXML
     public void setData(ActionEvent event) {
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                startdate1.setValue(startdate.getValue());
-                field.setText(
-                        String.valueOf(
-                                january.getTableView().getItems().get(0).getArrClimate()[5][1].getValue()).toString());
-                field.setEditable(false);
-            }
+        btn.setOnAction(actionEvent -> {
+            startdate1.setValue(startdate.getValue());
+            field.setText(
+                    String.valueOf(
+                            january.getTableView().getItems().get(0).getArrClimate()[5][1].getValue()).toString());
+            field.setEditable(false);
         });
     }
 
     @FXML
     public void setValue(ActionEvent event) {
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                startdate1.setValue(startdate.getValue());
-            }
-        });
+        btn.setOnAction(actionEvent -> startdate1.setValue(startdate.getValue()));
     }
 
     @FXML
     public void addSoilAction(ActionEvent actionEvent) {
-        addSoilBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                soilBase.addSoil();
-            }
-        });
+        addSoilBtn.setOnAction(actionEvent1 -> soilBase.addSoil());
     }
 
 //    public void setClimate(Main climateBaseCreate) {
