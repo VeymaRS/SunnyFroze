@@ -18,7 +18,7 @@ public class SoilBaseDeserialize implements JsonDeserializer<SoilBase> {
         for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {
             Soil soil = context.deserialize(entry.getValue(), Soil.class);
             soil.setNameSoil(entry.getKey());
-            result.addSoil(soil);
+            result.addSoil();
         }
 
         return result;

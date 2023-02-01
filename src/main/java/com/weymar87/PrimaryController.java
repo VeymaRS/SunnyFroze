@@ -6,12 +6,16 @@ import com.weymar87.climate.Climate;
 import com.weymar87.soil.Soil;
 import com.weymar87.soil.SoilBase;
 import com.weymar87.utils.ClimateBaseCreate;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.util.StringConverter;
 import javafx.util.converter.DoubleStringConverter;
 
 public class PrimaryController {
@@ -49,17 +53,30 @@ public class PrimaryController {
     @FXML
     private TableColumn<Climate, Double> december;
 
-    @FXML
-    private TableColumn<Climate, String> soilName;
 
     @FXML
-    private TableColumn<Climate, String> typeSoil;
+    private TableColumn<Soil, String> soilName;
+
     @FXML
-    private TableColumn<Climate, Double> Wtot;
+    private TableColumn<Soil, String> typeSoil;
     @FXML
-    private TableColumn<Climate, Double> Wp;
+    private TableColumn<Soil, Double> Wtot;
     @FXML
-    private TableColumn<Climate, Double> Tbf;
+    private TableColumn<Soil, Double> Wp;
+    @FXML
+    private TableColumn<Soil, Double> Tbf;
+    @FXML
+    private TableColumn<Soil, Double> lambda_th;
+    @FXML
+    private TableColumn<Soil, Double> lambda_f;
+    @FXML
+    private TableColumn<Soil, Double> cth;
+    @FXML
+    private TableColumn<Soil, Double> cf;
+    @FXML
+    private TableColumn<Soil, Double> Dsal;
+    @FXML
+    private TableColumn<Soil, Double> soilWidth;
     @FXML
     private TextField field;
 
@@ -85,6 +102,8 @@ public class PrimaryController {
         this.soilBase = new SoilBase();
         climate.setItems(climateBaseCreate.getClimateData());
         climate.setFixedCellSize(35);
+        soils.setItems(soilBase.getSoilList());
+
 
         january.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[0][1].asObject());
         february.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[1][1].asObject());
@@ -99,7 +118,17 @@ public class PrimaryController {
         november.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[10][1].asObject());
         december.setCellValueFactory(cellData -> cellData.getValue().getArrClimate()[11][1].asObject());
 
-
+        soilName.setCellValueFactory(cellData -> cellData.getValue().nameSoilProperty());
+        typeSoil.setCellValueFactory(cellData -> cellData.getValue().typeSoilProperty());
+        Wtot.setCellValueFactory(cellData -> cellData.getValue().wtotProperty().asObject());
+        Wp.setCellValueFactory(cellData -> cellData.getValue().wpProperty().asObject());
+        Tbf.setCellValueFactory(cellData -> cellData.getValue().tbfProperty().asObject());
+        lambda_th.setCellValueFactory(cellData -> cellData.getValue().lambda_thProperty().asObject());
+        lambda_f.setCellValueFactory(cellData -> cellData.getValue().lambda_thProperty().asObject());
+        cth.setCellValueFactory(cellData -> cellData.getValue().cthProperty().asObject());
+        cf.setCellValueFactory(cellData -> cellData.getValue().cfProperty().asObject());
+        Dsal.setCellValueFactory(cellData -> cellData.getValue().dsalProperty().asObject());
+        soilWidth.setCellValueFactory(cellData -> cellData.getValue().soilWidthProperty().asObject());
 
         january.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         january.setOnEditCommit(
@@ -212,7 +241,6 @@ public class PrimaryController {
             @Override
             public void handle(ActionEvent actionEvent) {
                 startdate1.setValue(startdate.getValue());
-
             }
         });
     }
@@ -222,10 +250,7 @@ public class PrimaryController {
         addSoilBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                soilBase.addSoil(new Soil("IGE1", "SAND", 0.00, 0.0, 0, 0.0,
-                        0.0, 0.0, 0.0, 0,
-                        0.0E6, 0.0E6, 0.0, 0.0, 0.0, 0));
-                soils.setItems(soilBase.getSoilList());
+                soilBase.addSoil();
             }
         });
     }

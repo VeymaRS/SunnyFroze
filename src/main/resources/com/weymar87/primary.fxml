@@ -112,12 +112,12 @@
                                                       <TableColumn fx:id="Wtot" prefWidth="50.0" resizable="false" sortable="false" text="Wtot" />
                                                       <TableColumn fx:id="Wp" prefWidth="50.0" resizable="false" sortable="false" text="Wp" />
                                                       <TableColumn fx:id="Tbf" prefWidth="50.0" resizable="false" sortable="false" text="Tbf" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="λth" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="λf" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Cth" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Cf" />
-                                                      <TableColumn prefWidth="50.0" resizable="false" sortable="false" text="Dsal" />
-                                                      <TableColumn prefWidth="60.0" resizable="false" sortable="false" text="Мощность" />
+                                                      <TableColumn fx:id="lambda_th" prefWidth="50.0" resizable="false" sortable="false" text="λth" />
+                                                      <TableColumn fx:id="lambda_f" prefWidth="50.0" resizable="false" sortable="false" text="λf" />
+                                                      <TableColumn fx:id="cth" prefWidth="50.0" resizable="false" sortable="false" text="Cth" />
+                                                      <TableColumn fx:id="cf" prefWidth="50.0" resizable="false" sortable="false" text="Cf" />
+                                                      <TableColumn fx:id="Dsal" prefWidth="50.0" resizable="false" sortable="false" text="Dsal" />
+                                                      <TableColumn fx:id="soilWidth" prefWidth="60.0" resizable="false" sortable="false" text="Мощность" />
                                                   </columns>
                                                 </TableView>
                                                 <Button fx:id="addSoilBtn" layoutX="10.0" layoutY="420.0" mnemonicParsing="false" onAction="#addSoilAction" text="Добавить слой" />
