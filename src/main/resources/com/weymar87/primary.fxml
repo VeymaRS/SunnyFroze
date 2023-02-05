@@ -124,7 +124,7 @@
                                              </children></AnchorPane>
                                     </content>
                                   </TitledPane>
-                                  <TitledPane animated="false" text="Термостабилизаторы">
+                                  <TitledPane animated="false" text="Термостабилизация">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                     </content>
