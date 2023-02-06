@@ -75,7 +75,7 @@
                                                       <Font size="10.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="HxUI" layoutX="249.0" layoutY="40.0" prefHeight="25.0" prefWidth="50.0" />
+                                                <TextField fx:id="HxUI" layoutX="249.0" layoutY="40.0" onAction="#setValueHxUI" prefHeight="25.0" prefWidth="50.0" />
                                                 <TextField fx:id="HyUI" layoutX="250.0" layoutY="75.0" prefWidth="50.0" />
                                                 <Label layoutX="190.0" layoutY="35.0" prefHeight="35.0" prefWidth="50.0" text="По оси X" wrapText="true">
                                                    <font>
@@ -87,6 +87,7 @@
                                                       <Font size="10.0" />
                                                    </font>
                                                 </Label>
+                                                <TextField fx:id="LUIexp" layoutX="375.0" layoutY="40.0" prefHeight="25.0" prefWidth="50.0" />
                                              </children>
                                           </AnchorPane>
                                        </content>
@@ -201,5 +202,6 @@
             </TabPane>
          </children>
       </AnchorPane>
+      <TextField fx:id="LUI1" prefHeight="25.0" prefWidth="50.0" />
    </children>
 </VBox>

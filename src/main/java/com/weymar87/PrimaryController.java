@@ -101,10 +101,12 @@ public class PrimaryController {
     private TextField HxUI;
 
     @FXML
-    private TextField LUI;
+    static TextField LUI;
     @FXML
-    private TextField HUI;
+    static TextField HUI;
 
+    @FXML
+    static TextField LUIexp;
 
     public PrimaryController() {
     }
@@ -149,6 +151,10 @@ public class PrimaryController {
         Dsal.setCellValueFactory(cellData -> cellData.getValue().dsalProperty().asObject());
         soilWidth.setCellValueFactory(cellData -> cellData.getValue().soilWidthProperty().asObject());
 
+//        HUI.setText("0");
+//        LUI.setText("0");
+//        HxUI.setText("0");
+//        HyUI.setText("0");
 
         january.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         january.setOnEditCommit(
@@ -262,8 +268,9 @@ public class PrimaryController {
     }
 
     @FXML
-    public void setValue(ActionEvent event) {
-        btn.setOnAction(actionEvent -> startdate1.setValue(startdate.getValue()));
+    public void setValueHxUI(ActionEvent event) {
+        mash.setHx(Double.parseDouble(HxUI.getText()));
+        LUIexp.setText(String.valueOf(mash.getHx()));
     }
 
     @FXML

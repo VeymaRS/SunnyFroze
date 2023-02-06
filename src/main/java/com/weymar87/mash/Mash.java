@@ -8,16 +8,13 @@ import javafx.beans.property.SimpleIntegerProperty;
 import java.util.Iterator;
 
 public class Mash {
-    private SimpleDoubleProperty HxUI = new SimpleDoubleProperty(0);
-    private SimpleDoubleProperty HyUI = new SimpleDoubleProperty(0);
-    private SimpleDoubleProperty LUI = new SimpleDoubleProperty(0);
-    private SimpleDoubleProperty HUI = new SimpleDoubleProperty(0);
 
-    double L = LUI.doubleValue();
-    double H = HUI.doubleValue();
 
-    double hx = HxUI.doubleValue();
-    double hy = HyUI.doubleValue();
+    double L;
+    double H;
+
+    double hx;
+    double hy;
 
     int Nx = (int) Math.round((L / hx) + 1);
     int Ny = (int) Math.round((H / hy) + 1);
@@ -29,6 +26,7 @@ public class Mash {
     private double[][] arrTempOnTheMash;
 
     int[][] arrGUonTheMash;
+
 
 
     public void createSoilMash() {
@@ -174,38 +172,6 @@ public class Mash {
         return lamda_max;
     }
 
-    public double getHxUI() {
-        return HxUI.get();
-    }
-
-    public SimpleDoubleProperty hxUIProperty() {
-        return HxUI;
-    }
-
-    public double getHyUI() {
-        return HyUI.get();
-    }
-
-    public SimpleDoubleProperty hyUIProperty() {
-        return HyUI;
-    }
-
-    public double getLUI() {
-        return LUI.get();
-    }
-
-    public SimpleDoubleProperty LUIProperty() {
-        return LUI;
-    }
-
-    public double getHUI() {
-        return HUI.get();
-    }
-
-    public SimpleDoubleProperty HUIProperty() {
-        return HUI;
-    }
-
     public double getL() {
         return L;
     }
@@ -232,6 +198,22 @@ public class Mash {
 
     public double getH_min() {
         return h_min;
+    }
+
+    public void setL(double l) {
+        L = l;
+    }
+
+    public void setH(double h) {
+        H = h;
+    }
+
+    public void setHx(double hx) {
+        this.hx = hx;
+    }
+
+    public void setHy(double hy) {
+        this.hy = hy;
     }
 
     public int[][] getArrGUonTheMash() {
