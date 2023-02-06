@@ -2,17 +2,19 @@ package com.weymar87.mash;
 
 import com.weymar87.soil.Soil;
 import com.weymar87.soil.SoilBase;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 import java.util.Iterator;
 
 public class Mash {
-    private int Nx = 51;
-    private int Ny = 101;
-    private double L = 5;
-    private double H = 10;
+    private SimpleIntegerProperty Nx = new SimpleIntegerProperty();
+    private SimpleIntegerProperty Ny;
+    private SimpleDoubleProperty L;
+    private SimpleDoubleProperty H;
 
-
-    double hx = L / (Nx - 1);
+double NxD = Nx.get();
+    double hx = L / (NxD - 1);
     double hy = H / (Ny - 1);
     double h_min;
     double c_min;
@@ -23,29 +25,6 @@ public class Mash {
     int[][] arrGUonTheMash;
 
 
-    public int getNx() {
-        return Nx;
-    }
-
-    public int getNy() {
-        return Ny;
-    }
-
-    public double getL() {
-        return L;
-    }
-
-    public double getH() {
-        return H;
-    }
-
-    public double getHx() {
-        return hx;
-    }
-
-    public double getHy() {
-        return hy;
-    }
 
     public void createSoilMash() {
         arrSoilMash = new Soil[Nx][Ny];

@@ -47,11 +47,53 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="768.0" prefWidth="1366.0">
                            <children>
-                              <Accordion prefHeight="600.0" prefWidth="600.0">
+                              <Accordion prefWidth="600.0">
                                 <panes>
+                                    <TitledPane animated="false" text="Расчетная сетка">
+                                       <content>
+                                          <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="200.0">
+                                             <children>
+                                                <Label layoutX="20.0" layoutY="35.0" prefHeight="35.0" prefWidth="50.0" text="По оси X" wrapText="true">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="20.0" layoutY="70.0" prefHeight="35.0" prefWidth="50.0" text="По оси Y" wrapText="true">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="20.0" layoutY="14.0" prefHeight="20.0" prefWidth="130.0" text="Размер расчетной сетки (м)" wrapText="true">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="100.0" layoutY="40.0" prefHeight="25.0" prefWidth="50.0" />
+                                                <TextField layoutX="100.0" layoutY="75.0" prefWidth="50.0" />
+                                                <Label layoutX="190.0" layoutY="14.0" prefHeight="20.0" prefWidth="130.0" text="Минимальный шаг (м)" wrapText="true">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="249.0" layoutY="40.0" prefHeight="25.0" prefWidth="50.0" />
+                                                <TextField layoutX="250.0" layoutY="75.0" prefWidth="50.0" />
+                                                <Label layoutX="190.0" layoutY="35.0" prefHeight="35.0" prefWidth="50.0" text="По оси X" wrapText="true">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="190.0" layoutY="70.0" prefHeight="35.0" prefWidth="50.0" text="По оси Y" wrapText="true">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </TitledPane>
                                   <TitledPane animated="false" text="Климатические данные">
                                     <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="1115.0">
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
                                              <children>
                                                 <Label layoutX="15.0" layoutY="35.0" prefHeight="35.0" prefWidth="140.0" text="Среднемесячная температура воздуха, °C" wrapText="true">
                                                    <font>
@@ -103,7 +145,7 @@
                                   </TitledPane>
                                   <TitledPane animated="false" text="Грунты">
                                     <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
                                              <children>
                                                 <TableView fx:id="soils" editable="true" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="575.0">
                                                   <columns>
@@ -134,11 +176,6 @@
                               <Button fx:id="primaryButton" layoutX="1425.0" layoutY="159.0" onAction="#switchToSecondary" text="Switch to Secondary View" />
                               <Label layoutX="1488.0" layoutY="133.0" text="Primary View" />
                            </children></AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Параметры расчета">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </Tab>
                   <Tab text="Результаты расчета">
