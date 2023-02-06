@@ -3,6 +3,7 @@ package com.weymar87;
 import java.io.IOException;
 
 import com.weymar87.climate.Climate;
+import com.weymar87.mash.Mash;
 import com.weymar87.soil.Soil;
 import com.weymar87.soil.SoilBase;
 import com.weymar87.utils.ClimateBaseCreate;
@@ -22,6 +23,8 @@ public class PrimaryController {
 
     private ClimateBaseCreate climateBaseCreate;
     private SoilBase soilBase;
+
+    private Mash mash;
     @FXML
     private TableView<Climate> climate;
 
@@ -92,6 +95,17 @@ public class PrimaryController {
     @FXML
     private Button addSoilBtn;
 
+    @FXML
+    private TextField HyUI;
+    @FXML
+    private TextField HxUI;
+
+    @FXML
+    private TextField LUI;
+    @FXML
+    private TextField HUI;
+
+
     public PrimaryController() {
     }
 
@@ -100,8 +114,13 @@ public class PrimaryController {
     private void initialize() {
         this.climateBaseCreate = new ClimateBaseCreate();
         this.soilBase = new SoilBase();
+        this.mash = new Mash();
+        mash.createSoilMash();
+        mash.createArrTempOnTheMash();
+
         climate.setItems(climateBaseCreate.getClimateData());
         climate.setFixedCellSize(35);
+        soils.setFixedCellSize(25);
         soils.setItems(soilBase.getSoilList());
 
 
@@ -129,6 +148,7 @@ public class PrimaryController {
         cf.setCellValueFactory(cellData -> cellData.getValue().cfProperty().asObject());
         Dsal.setCellValueFactory(cellData -> cellData.getValue().dsalProperty().asObject());
         soilWidth.setCellValueFactory(cellData -> cellData.getValue().soilWidthProperty().asObject());
+
 
         january.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         january.setOnEditCommit(

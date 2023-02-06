@@ -8,14 +8,20 @@ import javafx.beans.property.SimpleIntegerProperty;
 import java.util.Iterator;
 
 public class Mash {
-    private SimpleIntegerProperty Nx = new SimpleIntegerProperty();
-    private SimpleIntegerProperty Ny;
-    private SimpleDoubleProperty L;
-    private SimpleDoubleProperty H;
+    private SimpleDoubleProperty HxUI = new SimpleDoubleProperty(0);
+    private SimpleDoubleProperty HyUI = new SimpleDoubleProperty(0);
+    private SimpleDoubleProperty LUI = new SimpleDoubleProperty(0);
+    private SimpleDoubleProperty HUI = new SimpleDoubleProperty(0);
 
-double NxD = Nx.get();
-    double hx = L / (NxD - 1);
-    double hy = H / (Ny - 1);
+    double L = LUI.doubleValue();
+    double H = HUI.doubleValue();
+
+    double hx = HxUI.doubleValue();
+    double hy = HyUI.doubleValue();
+
+    int Nx = (int) Math.round((L / hx) + 1);
+    int Ny = (int) Math.round((H / hy) + 1);
+
     double h_min;
     double c_min;
     double lamda_max;
@@ -23,7 +29,6 @@ double NxD = Nx.get();
     private double[][] arrTempOnTheMash;
 
     int[][] arrGUonTheMash;
-
 
 
     public void createSoilMash() {
@@ -167,6 +172,66 @@ double NxD = Nx.get();
 
     public double getLamda_max() {
         return lamda_max;
+    }
+
+    public double getHxUI() {
+        return HxUI.get();
+    }
+
+    public SimpleDoubleProperty hxUIProperty() {
+        return HxUI;
+    }
+
+    public double getHyUI() {
+        return HyUI.get();
+    }
+
+    public SimpleDoubleProperty hyUIProperty() {
+        return HyUI;
+    }
+
+    public double getLUI() {
+        return LUI.get();
+    }
+
+    public SimpleDoubleProperty LUIProperty() {
+        return LUI;
+    }
+
+    public double getHUI() {
+        return HUI.get();
+    }
+
+    public SimpleDoubleProperty HUIProperty() {
+        return HUI;
+    }
+
+    public double getL() {
+        return L;
+    }
+
+    public double getH() {
+        return H;
+    }
+
+    public double getHx() {
+        return hx;
+    }
+
+    public double getHy() {
+        return hy;
+    }
+
+    public int getNx() {
+        return Nx;
+    }
+
+    public int getNy() {
+        return Ny;
+    }
+
+    public double getH_min() {
+        return h_min;
     }
 
     public int[][] getArrGUonTheMash() {
